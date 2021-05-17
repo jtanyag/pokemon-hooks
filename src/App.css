@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  padding: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app {
+  height: 100vh;
+  display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wild-pokemon,
+.captured-pokemon {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.list {
+  width: 50vw;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.list-item {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-image {
+  height: 100px;
+  width: 100px;
+  align-self: center;
+}
+
+/* CSS loader from https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje#the-spinner */
+.spinner-4 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 1px;
+  background: conic-gradient(#0000 10%, #f03355) content-box;
+  -webkit-mask: repeating-conic-gradient(
+      #0000 0deg,
+      #000 1deg 20deg,
+      #0000 21deg 36deg
+    ),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - 9px),
+      #000 calc(100% - 8px)
+    );
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: s4 1s infinite steps(10);
+  align-self: center;
+}
+@keyframes s4 {
   to {
-    transform: rotate(360deg);
+    transform: rotate(1turn);
   }
 }
